@@ -1,4 +1,8 @@
 return {
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 30edbea (sdf)
   {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -33,7 +37,21 @@ return {
     priority = 998,
     config = function()
       require("github-theme").setup({})
+<<<<<<< HEAD
       vim.cmd.colorscheme "github_dark_default"
     end,
   },
+=======
+  "catppuccin/nvim",
+  name = "catppuccin",
+  priority = 1000,
+  config = function()
+    require("catppuccin").setup({ flavour = "mocha" }) -- or latte, frappe, macchiato
+  end,
+>>>>>>> 55c2ff4 (vim)
+=======
+      vim.cmd.colorscheme "github_dark"
+    end,
+  },
+>>>>>>> 30edbea (sdf)
 }

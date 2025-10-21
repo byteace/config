@@ -16,7 +16,6 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-command -v nvim >/dev/null && alias vim=nvim
 alias v="vim"
 alias vim="nvim"
 
@@ -45,7 +44,7 @@ alias gfa="git fetch --all"
 
 alias oc="opencode"
 
-alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 if command -v /mnt/c/Windows/System32/clip.exe >/dev/null 2>&1; then
     alias pbcopy='clip.exe'
@@ -74,4 +73,4 @@ if command -v dircolors; then
 fi
 
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
-
+[ -f ~/.env ] && . ~/.env

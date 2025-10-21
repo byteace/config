@@ -7,6 +7,7 @@ return {
   },
   config = function()
     local dap = require("dap")
+    dap.defaults.fallback.auto_open = true
     local dapui = require("dapui")
 
     dapui.setup({
@@ -44,8 +45,51 @@ return {
         request = "launch",
         port = 9003,
         pathMappings = {
-          ["/srv/www/klicktipp/htdocs"] = "${workspaceFolder}",
+          ["/srv/www/klicktipp/htdocs"] = "${workspaceFolder}/drupal",
         },
+      },
+    }
+
+    -- Go/Delve adapter configuration (connects to remote Delve server)
+    dap.adapters.go = {
+      type = "server",
+      port = 40040,  -- Port for ai-email-generator-grpc-server
+      host = "localhost",
+    }
+
+    -- Go DAP configurations
+    dap.configurations.go = {
+      {
+        name = "Connect to AI Email Generator gRPC Server",
+        type = "go",
+        request = "attach",
+        mode = "remote",
+        substitutePath = {
+          {
+            from = "${workspaceFolder}/services/ai-email-generator",
+            to = "/Users/ops/src/klick-tipp/services/ai-email-generator",
+          },
+        },
+        port = 40040,
+        host = "localhost",
+        showLog = true,
+        trace = "verbose",
+      },
+      {
+        name = "Connect to AI Email Generator Worker",
+        type = "go",
+        request = "attach",
+        mode = "remote",
+        substitutePath = {
+          {
+            from = "${workspaceFolder}/services/ai-email-generator",
+            to = "/Users/ops/src/klick-tipp/services/ai-email-generator",
+          },
+        },
+        port = 40041,
+        host = "localhost",
+        showLog = true,
+        trace = "verbose",
       },
     }
 

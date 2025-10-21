@@ -1,6 +1,3 @@
-vim.g.mapleader = ";"
-vim.g.maplocalleader = "\\"
-
 vim.keymap.set("c", "<Down>", "<C-n>", { noremap = true })
 vim.keymap.set("c", "<Up>", "<C-p>", { noremap = true })
 
