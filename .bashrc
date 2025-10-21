@@ -9,13 +9,18 @@ else
 	PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]$(__git_ps1 "  %s")\[\033[0m\]\n$ '
 fi
 
+[ -f /etc/bash_completion ] && source /etc/bash_completion
+
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+command -v nvim >/dev/null && alias vim=nvim
 alias v="vim"
 alias vim="nvim"
+
+alias t="tmux"
 
 alias t="tmux"
 
@@ -64,6 +69,9 @@ for file in \
 	[ -f "$file" ] && . "$file"
 done
 
-#eval "$(dircolors ~/.dircolors)"
+if command -v dircolors; then
+    eval "$(dircolors ~/.dircolors)"
+fi
 
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
+
