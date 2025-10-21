@@ -1,18 +1,24 @@
-[ -f /etc/bash_completion ] && source /etc/bash_completion
+HISTSIZE=5000
+EDITOR=vim
+PAGER=less
 
 if [ $(id -u) -eq 0 ]; then
-  PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[31m\]\u@\h \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n# '
+	PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[31m\]\u@\h \[\033[33m\]\w\[\033[36m\]$(__git_ps1 " \\uE0A0 %s")\[\033[0m\]\n# '
 else
-  PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
+	PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]$(__git_ps1 " \\uE0A0 %s")\[\033[0m\]\n$ '
 fi
+
+[ -f /etc/bash_completion ] && source /etc/bash_completion
 
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-alias t="tmux"
+command -v nvim >/dev/null && alias vim=nvim
 alias v="vim"
+
+alias t="tmux"
 
 alias ls="ls --color=auto"
 alias l="ls"
@@ -28,6 +34,10 @@ alias gco="git commit"
 alias ga="git add -A ."
 alias gl="git log"
 alias gd="git diff"
+alias grh="git reset --hard HEAD"
+alias grm="git rebase master"
+alias grim="git rebase -i master"
+alias gfa="git fetch --all"
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 config_setup() {
@@ -35,4 +45,6 @@ config_setup() {
 	cd ~/.cfg
 	config config --local status.showUntrackedFiles no
 }
+
+[ -f ~/.bashrc.local ] && source ~/.bashrc.local
 
