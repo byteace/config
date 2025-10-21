@@ -3,9 +3,9 @@ EDITOR=vim
 PAGER=less
 
 if [ $(id -u) -eq 0 ]; then
-	PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[31m\]\u@\h \[\033[33m\]\w\[\033[36m\]$(__git_ps1 " \\uE0A0 %s")\[\033[0m\]\n# '
+	PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[31m\]\u@\h \[\033[33m\]\w\[\033[36m\]$(__git_ps1 "  %s")\[\033[0m\]\n# '
 else
-	PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]$(__git_ps1 " \\uE0A0 %s")\[\033[0m\]\n$ '
+	PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]$(__git_ps1 "  %s")\[\033[0m\]\n$ '
 fi
 
 [ -f /etc/bash_completion ] && source /etc/bash_completion
