@@ -40,11 +40,6 @@ alias grim="git rebase -i master"
 alias gfa="git fetch --all"
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-setup_config() {
-	git clone --bare https://github.com/byteace/config ~/.cfg
-	cd ~/.cfg
-	config config --local status.showUntrackedFiles no
-}
 
 [ -f ~/.bashrc.local ] && source ~/.bashrc.local
 
