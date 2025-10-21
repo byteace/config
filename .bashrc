@@ -64,4 +64,6 @@ for file in \
 	[ -f "$file" ] && . "$file"
 done
 
-eval "$(dircolors ~/.dircolors)"
+#eval "$(dircolors ~/.dircolors)"
+
+[ -f ~/.bashrc.local ] && . ~/.bashrc.local

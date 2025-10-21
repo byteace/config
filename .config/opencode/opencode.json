@@ -1,0 +1,50 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "tui": {
+    "scroll_speed": 3,
+    "scroll_acceleration": {
+      "enabled": true
+    }
+  },
+  "tools": {
+    "bash": true,
+    "write": true,
+    "edit": true,
+    "read": true,
+    "grep": true,
+    "glob": true,
+    "list": true,
+    "patch": true,
+    "todowrite": true,
+    "todoread": true,
+    "webfetch": true
+  },
+  "mcp": {
+    "filesystem": {
+      "type": "local",
+      "enabled": true,
+      "command": ["npx", "-y", "@modelcontextprotocol/server-filesystem", "/Users/ops/src"]
+    },
+    "mysql": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+          "npx",
+          "-y",
+          "@berthojoris/mcp-mysql-server",
+          "mysql://klicktipp:klicktipp@127.0.0.1:33066/klicktipp",
+          "list,read"
+      ]
+    },
+    "chrome-devtools": {
+      "type": "local",
+      "enabled": false,
+      "command": ["npx", "-y", "chrome-devtools-mcp@latest"]
+    },
+    "playwright": {
+      "type": "local",
+      "enabled": false,
+      "command": ["npx", "-y", "@playwright/mcp"]
+    }
+  }
+}
