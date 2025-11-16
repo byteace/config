@@ -38,7 +38,14 @@ alias grm="git rebase master"
 alias grim="git rebase -i master"
 alias gfa="git fetch --all"
 
+alias oc="opencode"
+
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+
+if command -v /mnt/c/Windows/System32/clip.exe >/dev/null 2>&1; then
+    alias pbcopy='clip.exe'
+    alias pbpaste='powershell.exe -c Get-Clipboard'
+fi
 
 for file in \
 	"/etc/bash_completion" \
