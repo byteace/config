@@ -46,6 +46,10 @@ if command -v /mnt/c/Windows/System32/clip.exe >/dev/null 2>&1; then
     alias pbcopy='clip.exe'
     alias pbpaste='powershell.exe -c Get-Clipboard'
 fi
+alias c="cd /mnt/c"
+alias d="cd /mnt/d"
+alias e="cd /mnt/e"
+alias f="cd /mnt/f"
 
 for file in \
 	"/etc/bash_completion" \
@@ -56,3 +60,4 @@ for file in \
 	[ -f "$file" ] && . "$file"
 done
 
+eval "$(dircolors ~/.dircolors)"
