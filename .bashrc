@@ -46,6 +46,10 @@ if command -v /mnt/c/Windows/System32/clip.exe >/dev/null 2>&1; then
     alias pbcopy='clip.exe'
     alias pbpaste='powershell.exe -c Get-Clipboard'
 fi
+
+command -v batcat >/dev/null 2>&1 && alias bat='batcat'
+command -v fdfind >/dev/null 2>&1 && alias fd='fdfind'
+
 alias c="cd /mnt/c"
 alias d="cd /mnt/d"
 alias e="cd /mnt/e"
