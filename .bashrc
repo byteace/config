@@ -3,10 +3,11 @@ EDITOR=vim
 PAGER=less
 export LC_ALL=en_US.UTF-8
 
+# Use PROMPT_COMMAND instead of command substitution for git prompt
 if [ $(id -u) -eq 0 ]; then
-  PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[31m\]\u@\h \[\033[33m\]\w\[\033[36m\]$(__git_ps1 "  %s")\[\033[0m\]\n# '
+  PROMPT_COMMAND='__git_ps1 "\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[31m\]\u@\h \[\033[33m\]\w\[\033[36m\]" "\[\033[0m\]\n# " "  %s"'
 else
-  PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]$(__git_ps1 "  %s")\[\033[0m\]\n$ '
+  PROMPT_COMMAND='__git_ps1 "\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]" "\[\033[0m\]\n$ " "  %s"'
 fi
 
 [ -f /etc/bash_completion ] && source /etc/bash_completion
