@@ -7,14 +7,9 @@ return {
       sources = { { name = "nvim_lsp" } },
       mapping = cmp.mapping.preset.insert({
         ["<C-Space>"] = cmp.mapping.complete(),
-<<<<<<< HEAD
-<<<<<<< HEAD
         ["<TAB>"] = cmp.mapping.confirm({ select = true }),
         ["<M-Down>"] = cmp.mapping(cmp.mapping.select_next_item({ count = 10 }), { "i", "c" }),
         ["<M-Up>"] = cmp.mapping(cmp.mapping.select_prev_item({ count = 10 }), { "i", "c" }),
-      }),
-    })
-=======
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
       }),
     })
@@ -29,13 +24,5 @@ return {
         },
       },
     })
->>>>>>> 455a59d (lazyvim)
-=======
-        ["<TAB>"] = cmp.mapping.confirm({ select = true }),
-        ["<M-Down>"] = cmp.mapping(cmp.mapping.select_next_item({ count = 10 }), { "i", "c" }),
-        ["<M-Up>"] = cmp.mapping(cmp.mapping.select_prev_item({ count = 10 }), { "i", "c" }),
-      }),
-    })
->>>>>>> 30edbea (sdf)
   end,
 }

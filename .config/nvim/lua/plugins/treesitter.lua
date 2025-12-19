@@ -3,10 +3,6 @@ return {
   branch = "master",
   lazy = false,
   build = ":TSUpdate",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 55c2ff4 (vim)
   config = function()
     require("nvim-treesitter.configs").setup({
       ensure_installed = { "lua", "php", "html" },
@@ -16,9 +12,4 @@ return {
       },
     })
   end,
-<<<<<<< HEAD
-=======
->>>>>>> 455a59d (lazyvim)
-=======
->>>>>>> 55c2ff4 (vim)
 }
