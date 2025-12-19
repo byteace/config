@@ -5,9 +5,9 @@ export LC_ALL=en_US.UTF-8
 
 # Use PROMPT_COMMAND instead of command substitution for git prompt
 if [ $(id -u) -eq 0 ]; then
-  PROMPT_COMMAND='__git_ps1 "\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[31m\]\u@\h \[\033[33m\]\w\[\033[36m\]" "\[\033[0m\]\n# " "  %s"'
+  PROMPT_COMMAND='__git_ps1 "\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[31m\]\u@\h \[\033[33m\]\w\[\033[36m\]" "\[\033[0m\]\n# " " '$'\uE0A0'' %s"'
 else
-  PROMPT_COMMAND='__git_ps1 "\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]" "\[\033[0m\]\n$ " "  %s"'
+  PROMPT_COMMAND='__git_ps1 "\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]" "\[\033[0m\]\n$ " " '$'\uE0A0'' %s"'
 fi
 
 [ -f /etc/bash_completion ] && source /etc/bash_completion
