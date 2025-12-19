@@ -4,9 +4,9 @@ PAGER=less
 export LC_ALL=en_US.UTF-8
 
 if [ $(id -u) -eq 0 ]; then
-	PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[31m\]\u@\h \[\033[33m\]\w\[\033[36m\]$(__git_ps1 "  %s")\[\033[0m\]\n# '
+  PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[31m\]\u@\h \[\033[33m\]\w\[\033[36m\]$(__git_ps1 "  %s")\[\033[0m\]\n# '
 else
-	PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]$(__git_ps1 "  %s")\[\033[0m\]\n$ '
+  PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]$(__git_ps1 "  %s")\[\033[0m\]\n$ '
 fi
 
 [ -f /etc/bash_completion ] && source /etc/bash_completion
@@ -44,11 +44,11 @@ alias gfa="git fetch --all"
 
 alias oc="opencode"
 
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 if command -v /mnt/c/Windows/System32/clip.exe >/dev/null 2>&1; then
-    alias pbcopy='clip.exe'
-    alias pbpaste='powershell.exe -c Get-Clipboard'
+  alias pbcopy='clip.exe'
+  alias pbpaste='powershell.exe -c Get-Clipboard'
 fi
 
 command -v batcat >/dev/null 2>&1 && alias bat='batcat'
@@ -60,16 +60,18 @@ alias e="cd /mnt/e"
 alias f="cd /mnt/f"
 
 for file in \
-	"/etc/bash_completion" \
-	"/usr/share/git/completion/git-completion.bash" \
-	"/usr/share/git/completion/git-prompt.sh" \
-	"$HOME/.bashrc.local" \
-	"$HOME/.env"; do
-	[ -f "$file" ] && . "$file"
+  "/etc/bash_completion" \
+  "/usr/share/git/completion/git-completion.bash" \
+  "/usr/share/git/completion/git-prompt.sh" \
+  "/mingw/share/git/completion/git-completion.bash" \
+  "/mingw/share/git/completion/git-prompt.sh" \
+  "$HOME/.bashrc.local" \
+  "$HOME/.env"; do
+  [ -f "$file" ] && . "$file"
 done
 
 if command -v dircolors >/dev/null 2>&1; then
-    eval "$(dircolors ~/.dircolors)"
+  eval "$(dircolors ~/.dircolors)"
 fi
 
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
