@@ -2,7 +2,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    priority = 1000,
+    priority = 999,
     config = function()
       require("catppuccin").setup({
         flavour = "mocha",
@@ -12,7 +12,7 @@ return {
   {
     "Mofiqul/vscode.nvim",
     name = "vscode",
-    priority = 999,
+    priority = 998,
     config = function()
       require("vscode").setup({
         style = "dark",
@@ -30,10 +30,9 @@ return {
     "projekt0n/github-nvim-theme",
     name = "github_dark",
     lazy = false,
-    priority = 998,
+    priority = 1000,
     config = function()
       require("github-theme").setup({})
-      vim.cmd.colorscheme "github_dark_default"
     end,
   },
 }

@@ -68,7 +68,7 @@ for file in \
 	[ -f "$file" ] && . "$file"
 done
 
-if command -v dircolors; then
+if command -v dircolors >/dev/null 2>&1; then
     eval "$(dircolors ~/.dircolors)"
 fi
 

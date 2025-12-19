@@ -23,8 +23,4 @@ if vim.fn.has('wsl') == 1 then
     }
 end
 
-vim.api.nvim_set_hl(0, "LineNr", { fg = "#888888" })
-vim.api.nvim_set_hl(0, "CursorLine", { bg = "NONE" })
-vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#bbbbbb", bold = true })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#222222" })
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "github_dark_default"

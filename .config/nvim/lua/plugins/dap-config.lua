@@ -3,6 +3,7 @@ return {
   "mfussenegger/nvim-dap",
   dependencies = {
     "rcarriga/nvim-dap-ui",
+    "nvim-neotest/nvim-nio",
     "jay-babu/mason-nvim-dap.nvim",
   },
   config = function()
@@ -111,19 +112,6 @@ return {
     vim.keymap.set("n", "<F6>", function()
       require("dapui").close()
     end, { desc = "DAP: Close UI" })
-
-    -- Highlight current line in DAP UI
-    vim.api.nvim_set_hl(0, "DapUINormal", { bg = "#1a1a1a" })
-    vim.api.nvim_set_hl(0, "DapUICurrentFrame", { fg = "#ffffff", bg = "#3a3a3a", bold = true })
-    vim.api.nvim_set_hl(0, "DapUIBreakpointsCurrentLine", { fg = "#ff5555", bold = true })
-
-    -- Make arrow white
-    vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
-    vim.fn.sign_define("DapStopped", { text = "→", texthl = "DapStopped", linehl = "DapCurrentLine", numhl = "" })
-    vim.api.nvim_set_hl(0, "DapStopped", { fg = "#ffffff", bg = "#3a3a3a" })
-    vim.api.nvim_set_hl(0, "DapCurrentLine", { bg = "#3a3a3a" })
-    vim.api.nvim_set_hl(0, "DapBreakpoint", { fg = "#f87070", bold = true })
-
 
     vim.api.nvim_create_autocmd("FileType", {
         pattern = "dap-float",

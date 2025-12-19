@@ -3,7 +3,6 @@ return {
   dependencies = { "williamboman/mason.nvim" },
   config = function()
     require("mason-lspconfig").setup({
-      ensure_installed = { "intelephense", "lua_ls" },
       ensure_installed = { "lua_ls", "intelephense" },
     })
   end,

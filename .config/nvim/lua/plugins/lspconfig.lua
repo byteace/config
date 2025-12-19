@@ -6,7 +6,16 @@ return {
 
     vim.lsp.config("*", { capabilities = capabilities })
 
-    vim.lsp.config('lua_ls', {})
+    vim.lsp.config('lua_ls', {
+      settings = {
+        Lua = {
+          runtime = { version = "LuaJIT" },
+          diagnostics = { globals = { "vim" } },
+          workspace = { library = vim.api.nvim_get_runtime_file("", true) },
+          telemetry = { enable = false },
+        },
+      },
+    })
     vim.lsp.config('intelephense', {
       settings = {
         intelephense = { files = { maxSize = 5000000 } }
