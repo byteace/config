@@ -23,11 +23,11 @@
     "filesystem": {
       "type": "local",
       "enabled": true,
-      "command": ["npx", "-y", "@modelcontextprotocol/server-filesystem", "/Users/ops/src"]
+      "command": ["npx", "-y", "@modelcontextprotocol/server-filesystem", "/e/work", "/c/Users/ops/src"]
     },
     "mysql": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
           "npx",
           "-y",
@@ -45,6 +45,28 @@
       "type": "local",
       "enabled": false,
       "command": ["npx", "-y", "@playwright/mcp"]
+    },
+    "unity-mcp": {
+      "type": "local",
+      "enabled": false,
+      "command": [
+        "uv",
+        "run",
+        "--directory",
+        "E:\\work\\unity\\playground\\Library\\PackageCache\\com.coplaydev.unity-mcp@83e2b863acf5\\UnityMcpServer~\\src",
+        "server.py"
+      ]
+    },
+    "coplay-mcp": {
+      "type": "local",
+      "enabled": false,
+      "command": [
+        "uvx",
+        "--python",
+        ">=3.11",
+        "coplay-mcp-server@latest"
+      ],
+      "timeout": 720000
     }
   }
 }
