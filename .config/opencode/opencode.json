@@ -23,7 +23,7 @@
     "filesystem": {
       "type": "local",
       "enabled": true,
-      "command": ["npx", "-y", "@modelcontextprotocol/server-filesystem", "/e/work", "/c/Users/ops/src"]
+      "command": ["npx", "-y", "@modelcontextprotocol/server-filesystem", "/e/src", "/c/Users/ops"]
     },
     "mysql": {
       "type": "local",
@@ -38,7 +38,7 @@
     },
     "chrome-devtools": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": ["npx", "-y", "chrome-devtools-mcp@latest"]
     },
     "playwright": {

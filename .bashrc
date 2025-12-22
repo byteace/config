@@ -45,8 +45,6 @@ alias gfa="git fetch --all"
 
 alias oc="opencode"
 
-alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-
 if command -v /mnt/c/Windows/System32/clip.exe >/dev/null 2>&1; then
   alias pbcopy='clip.exe'
   alias pbpaste='powershell.exe -c Get-Clipboard'
@@ -74,3 +72,5 @@ done
 if command -v dircolors >/dev/null 2>&1; then
   eval "$(dircolors ~/.dircolors)"
 fi
+
+alias cls="clear && printf '\e[3J'"
