@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+CUSTOM_BUILD="/e/src/opencode/packages/opencode/dist/opencode-windows-x64/bin/opencode.exe"
+OFFICIAL_BUILD="C:/Users/ops/AppData/Roaming/npm/opencode.cmd"
+
+if [[ "$1" == "--latest" ]]; then
+    shift
+    exec "$OFFICIAL_BUILD" "$@"
+else
+    OPENCODE_DISABLE_AUTOUPDATE=1 exec "$CUSTOM_BUILD" "$@"
+fi
